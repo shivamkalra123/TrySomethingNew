@@ -3,7 +3,7 @@ import { useLocation, useParams, Navigate } from 'react-router-dom';
 import io from 'socket.io-client';
 import './Room.css';
 
-const socket = io('http://localhost:4000');
+const socket = io('https://trysomethingnew.onrender.com:4000');
 
 const Room = () => {
   const { roomId } = useParams();
