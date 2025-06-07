@@ -1,0 +1,221 @@
+/* Base reset */
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background-color: #181a1f;
+    color: #f0ebe3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+  }
+  
+  .room-container {
+    max-width: 480px;
+    margin: 3rem auto;
+    padding: 2.5rem 2rem;
+    background-color: #242730;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    text-align: center;
+  }
+  
+  h2 {
+    font-weight: 700;
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+    color: #ff6f61;
+    user-select: text;
+  }
+  
+  .status {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+    color: #c7c4be;
+    min-height: 24px;
+  }
+  
+  .current-letter {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: #08bdbd;
+    letter-spacing: 1.5px;
+  }
+  
+  .current-letter strong {
+    text-transform: uppercase;
+  }
+  
+  .flag-container {
+    margin: 0 auto 2rem;
+    width: 220px;
+    height: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #ff6f61;
+    background-color: #1c1e24;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+  }
+  
+  .flag {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: drop-shadow(0 0 4px rgba(255, 111, 97, 0.6));
+  }
+  
+  .last-country {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #ff6f61;
+    user-select: text;
+  }
+  
+  .history-container {
+    max-width: 400px;
+    margin: 0 auto 3rem;
+    background-color: #2a2d36;
+    border-radius: 12px;
+    padding: 14px 18px;
+    box-shadow: inset 0 0 8px #08bdbd33;
+    text-align: left;
+    max-height: 160px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #08bdbd77 transparent;
+    user-select: text;
+  }
+  
+  .history-container h4 {
+    margin-bottom: 0.9rem;
+    color: #08bdbd;
+    font-weight: 600;
+  }
+  
+  .history-container ol {
+    padding-left: 18px;
+    margin: 0;
+    color: #d1ccc4;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  
+  .history-container ol::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .history-container ol::-webkit-scrollbar-thumb {
+    background: #08bdbd77;
+    border-radius: 4px;
+  }
+  
+  .players-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .player-card {
+    background-color: #2a2d36;
+    border-radius: 14px;
+    padding: 20px 18px;
+    width: 140px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    color: #ccc;
+    font-weight: 500;
+    user-select: none;
+    position: relative;
+    cursor: default;
+    transition: background-color 0.3s ease;
+  }
+  
+  .player-card.active {
+    background-color: #ff6f61;
+    color: #f0ebe3;
+    box-shadow: 0 4px 12px rgba(255, 111, 97, 0.5);
+  }
+  
+  .player-card strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.2rem;
+  }
+  
+  .mic-status {
+    margin-top: 14px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    user-select: none;
+    color: #ccc;
+    transition: color 0.3s ease;
+  }
+  
+  .mic-status.listening {
+    color: #08bdbd;
+  }
+  
+  .mic-status.idle {
+    color: #ff6f61;
+  }
+  
+  .spoken-text-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    background-color: #1c1e24;
+    border-radius: 16px;
+    box-shadow: inset 0 0 10px #08bdbdaa;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #08bdbd;
+    user-select: text;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+  
+  .spoken-text-container strong {
+    font-size: 1rem;
+    margin-right: 8px;
+    color: #ff6f61;
+    user-select: text;
+  }
+  
+  /* Scrollbar */
+  .history-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .history-container::-webkit-scrollbar-thumb {
+    background-color: #08bdbd77;
+    border-radius: 6px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 520px) {
+    .room-container {
+      margin: 2rem 1rem;
+      padding: 1.8rem 1.5rem;
+    }
+    .players-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .player-card {
+      width: 100%;
+    }
+  }
+  
